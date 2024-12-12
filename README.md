@@ -1,25 +1,14 @@
 # CloudComputing
 Dokumentasi Learning Path Cloud Computing
+Link Deploy: https://checkmate-506488875993.asia-southeast2.run.app
 
 Dokumentasi API's
 
 Endpoint Register Metode POST: https://checkmate-506488875993.asia-southeast2.run.app/api/register
 
-Request Body:
+Request Body Form-data:
+![image](https://github.com/user-attachments/assets/5c3a8e7a-fd86-4c2b-8178-7f440a72aa5e)
 
-{
-
-  "username": "zain",
-  
-  "email": "zain@gmail.com",
-  
-  "student_number": "",
-  
-  "password": "password123",
-  
-  "role": "siswa"
-  
-}
 
 Response:
 
@@ -95,32 +84,6 @@ Respons 201 Create:
     
 }
 
-Response
-
-200 OK
-
-{
-
-  "status": "success",
-  
-  "message": "Login successful",
-  
-  "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczMzgzNjQzOCwianRpIjoiNDNhMzA4ZTYtNmIyZS00MWQ2LWE0NTAtODUyZWVkMmM0MmVhIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InphaW4iLCJuYmYiOjE3MzM4MzY0MzgsImNzcmYiOiJkYjRkYzAzNC1iMDMzLTQ4ZmYtYWViZi0wOWJmMWNlZWFmMzgiLCJleHAiOjE3MzM4NDM2Mzh9.0OXNrJbzKcLRqHBJRnwVRVH91PCjjUNd9UKuj9_B9m4",
-  
-  "user": {
-  
-    "email": "<email>",
-    
-    "username": "<username>",
-    
-    "student_number": "<student_number>",
-    
-    "role": "<role>"
-    
-  }
-  
-}
-
 
 
 401 Unauthorized
@@ -154,8 +117,9 @@ Headers:
 ![bearer](https://github.com/user-attachments/assets/d0e272c4-9a6f-4f87-915e-056cadec2197)
 
 
-Request: 
-![request](https://github.com/user-attachments/assets/56b1b9db-29e2-4d83-99b0-83bc179ac3eb)
+Request Body Form-data: 
+![image](https://github.com/user-attachments/assets/5bc30326-4966-47d5-867c-5ec1fb953dc7)
+
 
 
 
@@ -208,26 +172,26 @@ Response
 
 {
 
-  "status": "success",
-  
-  "data": {
-  
-    "id": "<user_id>",
+    "data": {
+
+        "email": "joel@gmail.com",
+        
+        "profile_image": "https://storage.googleapis.com/storage-images-checkmate/profile_images/097b0957-e8de-4c98-ae27-8985403e4dab.png",
+        
+        "qualification": "Guru Tetap",
+        
+        "role": "guru",
+        
+        "student_number": "",
+        
+        "subject": "Matematika",
+        
+        "username": "joel"
+        
+    },
     
-    "username": "<username>",
+    "status": "success"
     
-    "email": "<email>",
-    
-    "student_number": "<student_number>",
-    
-    "role": "<role>",
-    
-    "class": "<class>",
-    
-    "grade": "<grade>"
-    
-  }
-  
 }
 
 
@@ -388,6 +352,10 @@ Response:
         
         "mood_status": "sad",
         
+        "point": 10,
+        
+        "semester_total_point": 60,
+        
         "student_id": 5,
         
         "tie_status": "Tidak Ada Dasi",
@@ -401,7 +369,7 @@ Response:
 }
 
 
-Endpoint Student Recap Model Absen per tanggal GET: (hanya siswa yang bisa & siapa yang login) https://checkmate-506488875993.asia-southeast2.run.app/api/student-recap/attendance-status?date=2024-12-10
+Endpoint Student Recap Model Absen per tanggal GET: (hanya siswa yang bisa & siapa yang login) https://checkmate-506488875993.asia-southeast2.run.app/api/student-recap/attendance-status?date=2024-12-12
 
 Headers:
 ![bearer](https://github.com/user-attachments/assets/24856361-9ae0-4f4a-b783-00d2805ae179)
@@ -413,11 +381,15 @@ Response:
 
     "attendance_data": {
     
-        "date": "2024-12-10 14:35:10",
+        "date": "2024-12-12 07:52:15",
         
         "image_url": "https://checkmate-506488875993.asia-southeast2.run.app/storage/attendance_images/08bdd73a-0ba2-4638-af28-4d7f99233095.jpg",
+
+        "point": 10,
         
-        "status_absen": "Terlambat",
+        "semester_total_point": 60,
+        
+        "status_absen": "Hadir",
         
         "student_id": 5,
         
@@ -430,7 +402,7 @@ Response:
 }
 
 
-Endpoint Student Recap Model Mood per tanggal GET: (hanya siswa yang bisa & siapa yang login) https://checkmate-506488875993.asia-southeast2.run.app/api/student-recap/mood-status?date=2024-12-10
+Endpoint Student Recap Model Mood per tanggal GET: (hanya siswa yang bisa & siapa yang login) https://checkmate-506488875993.asia-southeast2.run.app/api/student-recap/mood-status?date=2024-12-12
 
 Headers:
 ![bearer](https://github.com/user-attachments/assets/5c85b2d9-1bd7-4223-81f7-386dcac193d5)
@@ -442,9 +414,13 @@ Response:
 
     "mood_data": {
     
-        "date": "2024-12-10 14:35:10",
+        "date": "2024-12-12 07:52:15",
         
         "image_url": "https://checkmate-506488875993.asia-southeast2.run.app/storage/attendance_images/08bdd73a-0ba2-4638-af28-4d7f99233095.jpg",
+
+        "point": 10,
+        
+        "semester_total_point": 60,
         
         "status_mood": "sad",
         
@@ -472,9 +448,13 @@ Response:
     
     "tie_data": {
     
-        "date": "2024-12-10 14:35:10",
+        "date": "2024-12-12 07:52:15",
         
         "image_url": "https://checkmate-506488875993.asia-southeast2.run.app/storage/attendance_images/08bdd73a-0ba2-4638-af28-4d7f99233095.jpg",
+
+        "point": 10,
+        
+        "semester_total_point": 60,
         
         "status_dasi": "Tidak Ada Dasi",
 
@@ -508,6 +488,10 @@ Response:
             "date": "2024-12-10 20:55:43",
             
             "image_url": "https://checkmate-506488875993.asia-southeast2.run.app/storage/attendance_images/07180d83-0aab-4468-969b-c28823484640.jpg",
+
+            "point": 0,
+            
+            "semester_total_point": 0,
             
             "status_absen": "Terlambat",
             
@@ -522,6 +506,10 @@ Response:
             "date": "2024-12-10 20:55:33",
             
             "image_url": "https://checkmate-506488875993.asia-southeast2.run.app/storage/attendance_images/ca86eb39-9002-47c8-858e-5994d607e210.jpg",
+
+            "point": 0,
+            
+            "semester_total_point": 0,
             
             "status_absen": "Terlambat",
             
@@ -536,6 +524,10 @@ Response:
             "date": "2024-12-10 20:55:13",
             
             "image_url": "https://checkmate-506488875993.asia-southeast2.run.app/storage/attendance_images/67139251-a253-4395-9997-f1faeea93e25.jpg",
+
+            "point": 0,
+            
+            "semester_total_point": 0,
             
             "status_absen": "Terlambat",
             
@@ -585,6 +577,10 @@ Response:
             "date": "2024-12-10 20:55:43",
             
             "image_url": "https://checkmate-506488875993.asia-southeast2.run.app/storage/attendance_images/07180d83-0aab-4468-969b-c28823484640.jpg",
+
+            "point": 0,
+            
+            "semester_total_point": 0,
             
             "status_mood": "sad",
             
@@ -599,6 +595,10 @@ Response:
             "date": "2024-12-10 20:55:33",
             
             "image_url": "https://checkmate-506488875993.asia-southeast2.run.app/storage/attendance_images/ca86eb39-9002-47c8-858e-5994d607e210.jpg",
+
+            "point": 0,
+            
+            "semester_total_point": 0,
             
             "status_mood": "sad",
             
@@ -613,6 +613,10 @@ Response:
             "date": "2024-12-10 20:55:13",
             
             "image_url": "https://checkmate-506488875993.asia-southeast2.run.app/storage/attendance_images/67139251-a253-4395-9997-f1faeea93e25.jpg",
+
+            "point": 0,
+            
+            "semester_total_point": 0,
             
             "status_mood": "angry",
             
@@ -656,6 +660,10 @@ Respons:
             "date": "2024-12-10 20:55:43",
             
             "image_url": "https://checkmate-506488875993.asia-southeast2.run.app/storage/attendance_images/07180d83-0aab-4468-969b-c28823484640.jpg",
+
+            "point": 0,
+            
+            "semester_total_point": 0,
             
             "status_dasi": "Tidak Ada Dasi",
             
@@ -670,6 +678,10 @@ Respons:
             "date": "2024-12-10 20:55:33",
             
             "image_url": "https://checkmate-506488875993.asia-southeast2.run.app/storage/attendance_images/ca86eb39-9002-47c8-858e-5994d607e210.jpg",
+
+            "point": 0,
+            
+            "semester_total_point": 0,
             
             "status_dasi": "Tidak Ada Dasi",
             
@@ -684,6 +696,10 @@ Respons:
             "date": "2024-12-10 20:55:13",
             
             "image_url": "https://checkmate-506488875993.asia-southeast2.run.app/storage/attendance_images/67139251-a253-4395-9997-f1faeea93e25.jpg",
+
+            "point": 0,
+            
+            "semester_total_point": 0,
             
             "status_dasi": "Tidak Ada Dasi",
             
@@ -715,6 +731,10 @@ Response:
             "date": "2024-12-10 20:55:43",
 
             "image_url": "https://checkmate-506488875993.asia-southeast2.run.app/storage/attendance_images/07180d83-0aab-4468-969b-c28823484640.jpg",
+
+            "point": 0,
+            
+            "semester_total_point": 0,
             
             "status_absen": "Terlambat",
             
@@ -733,6 +753,10 @@ Response:
             "date": "2024-12-10 20:55:33",
             
             "image_url": "https://checkmate-506488875993.asia-southeast2.run.app/storage/attendance_images/ca86eb39-9002-47c8-858e-5994d607e210.jpg",
+
+            "point": 0,
+            
+            "semester_total_point": 0,
             
             "status_absen": "Terlambat",
 
@@ -751,6 +775,10 @@ Response:
             "date": "2024-12-10 20:55:13",
             
             "image_url": "https://checkmate-506488875993.asia-southeast2.run.app/storage/attendance_images/67139251-a253-4395-9997-f1faeea93e25.jpg",
+
+            "point": 0,
+            
+            "semester_total_point": 0,
             
             "status_absen": "Terlambat",
             
